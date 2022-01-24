@@ -25,6 +25,21 @@ public class Controller : MonoBehaviour
             newPos.z += Time.deltaTime * speed;
         }
 
+        if (Input.GetKey(KeyCode.DownArrow))
+        {
+            newPos.z -= Time.deltaTime * speed;
+        }
+
+        if (Input.GetKey(KeyCode.LeftArrow))
+        {
+            newPos.x -= Time.deltaTime * speed;
+        }
+
+        if (Input.GetKey(KeyCode.RightArrow))
+        {
+            newPos.x += Time.deltaTime * speed;
+        }
+
         transform.position = newPos;
     }
 }
