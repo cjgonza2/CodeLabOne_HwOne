@@ -4,13 +4,16 @@ using UnityEngine;
 
 public class Controller : MonoBehaviour
 {
-
+    #region Variables
     public GameObject punchPrompt;
 
     public float speed = 2;
 
     bool punch = false;
-    
+
+    public GameManager myManager;
+    #endregion
+
     // Start is called before the first frame update
     void Start()
     {
@@ -23,7 +26,7 @@ public class Controller : MonoBehaviour
 
         //Debug.Log(punch);
 
-        #region Controls
+        #region Movement
         Vector3 newPos = transform.position;
 
         if (Input.GetKey(KeyCode.UpArrow))
@@ -44,22 +47,23 @@ public class Controller : MonoBehaviour
             newPos.x += Time.deltaTime * speed;
         }   //if the player presses the right key the character moves to the right.
 
-        transform.position = newPos; //updates the character's position.
+        transform.position = newPos; //updates the character's position.        
         #endregion
 
         #region PunchPrompt
-        if (punch == false)
+        if (punch == false) //if punch varaible is false, prompt is not displayed. 
         {
             punchPrompt.SetActive(false);
         }
-        
-        if (punch == true)  //if punch variable is true, prompt is destroyed.
+        if (punch == true)  //if punch variable is true, prompt is displayed.
         {
             punchPrompt.SetActive(true);
 
-            if (Input.GetKey(KeyCode.Space))
+            if (Input.GetKeyUp(KeyCode.Space))
             {
-                Debug.Log("You punched a donkey!");
+                //Debug.Log("You punched a donkey!");
+                myManager.punchScore ++; //adds 1 value to the punch score.
+
             }
         }
         #endregion
