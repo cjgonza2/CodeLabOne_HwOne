@@ -9,6 +9,7 @@ public class GameManager : MonoBehaviour
     public int punchScore;
     
     public float timer;
+    public float f;
 
     public Text scoreText;
     public Text timerText;
@@ -23,13 +24,14 @@ public class GameManager : MonoBehaviour
     void Update()
     {
         scoreText.text = ("Score: " + punchScore + " punches");
-        timerText.text = "Time Remaining: " + timer;
+        timerText.text = "Time Remaining: " + f;
 
         if(timer  > 0)
         {
             timer -= Time.deltaTime;
         }
-        Mathf.Round(timer * 100f / 100f);
+        
+        f = Mathf.Round((timer * 10.0f) * 0.1f);
 
         if(timer <= 0)
         {
