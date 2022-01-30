@@ -409,8 +409,14 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: You have 15 seconds to NOT approach the donkey and PUNCH IT as many times
+  m_Text: 'You have 15 seconds to NOT approach the donkey and PUNCH IT as many times
     as possible!
+
+
+    Use the Arrow Keys to move and remember
+
+    DON''T PUNCH
+    THAT DONKEY!'
 --- !u!222 &448877186
 CanvasRenderer:
   m_ObjectHideFlags: 0

@@ -2527,7 +2527,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   punchPrompt: {fileID: 485973939}
-  speed: 2
+  speed: 3
   myManager: {fileID: 1215762837}
 --- !u!65 &1343444223
 BoxCollider:
