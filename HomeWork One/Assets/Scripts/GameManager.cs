@@ -34,9 +34,16 @@ public class GameManager : MonoBehaviour
         
         f = Mathf.Round((timer * 10.0f) * 0.1f);
 
-        if(timer <= 0)
+        if(timer <= 0 && punchScore == 0)
         {
             SceneManager.LoadScene("End Scene");
         }
+        else if(timer <= 0 && punchScore > 0)
+        {
+            //Debug.Log("You're a monster");
+            SceneManager.LoadScene("Bad Scene");
+        }
+
+
     }
 }
